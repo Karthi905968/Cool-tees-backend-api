@@ -30,12 +30,16 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000',
+    '*'
+]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
     'rest_framework',
     'django_filters',
     'django.contrib.admin',
@@ -61,6 +65,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'backend.cors_middleware.CorsMiddleware', 
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'backend.urls'
