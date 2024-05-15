@@ -5,4 +5,4 @@ class PostSerializer(serializers.ModelSerializer):
     image = serializers.ImageField(required=False)
     class Meta:
         model = PostModel
-        fields = ['name','body','image']
+        fields = '__all__'
